@@ -1,5 +1,7 @@
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
+#include <glm/mat4x4.hpp>
+#include <glm/ext/matrix_clip_space.hpp> 
 
 #include <iostream>
 #include <stdexcept>
@@ -48,7 +50,7 @@ private:
 
 int main() {
     HelloTriangleApplication app;
-
+    glm::mat4 Projection = glm::perspective(glm::pi<float>() * 0.25f, 4.0f / 3.0f, 0.1f, 100.f);
     try {
         app.run();
     }
