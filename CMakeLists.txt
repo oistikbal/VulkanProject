@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.24)
+cmake_minimum_required(VERSION 3.15)
 
 project(VulkanProject VERSION 1.0.0 LANGUAGES CXX)
 
@@ -8,3 +8,7 @@ set_property(GLOBAL PROPERTY PREDEFINED_TARGETS_FOLDER "")
 
 add_subdirectory(src)
 add_subdirectory(3rdparty EXCLUDE_FROM_ALL)
+
+set(BUILD_SCRIPTS_SOURCES )
+
+add_custom_target(BuildScripts SOURCES Build.ps1 BuildnRun.ps1)
