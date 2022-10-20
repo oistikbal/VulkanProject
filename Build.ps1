@@ -1,7 +1,7 @@
-$path = "$PSScriptRoot/build"
-If(!(test-path -PathType container $path))
+$buildPath = "$PSScriptRoot/build"
+If(!(test-path -PathType container $buildPath))
 {
-      New-Item -ItemType Directory -Path $path
+      New-Item -ItemType Directory -Path $buildPath
 }
 
 if($args[0] -eq "-r" -or $args[0] -eq "--release")
@@ -13,5 +13,5 @@ else
     $env = "Debug"
 }
 
-cmake -DCMAKE_BUILD_TYPE="$env" -S . -B ./build
-cmake --build ./build --config "$env"
+cmake -DCMAKE_BUILD_TYPE="$env" -S "$PSScriptRoot" -B "$buildPath"
+cmake --build "$buildPath" --config "$env"

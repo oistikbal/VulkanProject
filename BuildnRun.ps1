@@ -1,14 +1,19 @@
- . .\Build.ps1 $args
+ . $PSScriptRoot\Build.ps1 $args
 
 if($IsWindows)
 {
-    Invoke-Expression("$PSScriptRoot/build/src/$env/VulkanProject.exe")
+    Set-Location -Path $buildPath/src/$env/
+    Invoke-Expression(".\VulkanProject.exe")
 }
 elseif($IsLinux)
 {
-    Invoke-Expression("$PSScriptRoot/build/src/$env/VulkanProject")
+    Set-Location -Path $buildPath/src/$env/
+    Invoke-Expression(".\VulkanProject")
 }
 elseif($IsMacOS)
 {
-    Invoke-Expression("$PSScriptRoot/build/src/$env/VulkanProject")
+    Set-Location -Path $buildPath/src/$env/
+    Invoke-Expression(".\VulkanProject")
 }
+
+Set-Location -Path $PSScriptRoot
