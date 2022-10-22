@@ -7,12 +7,12 @@ if($IsWindows)
 }
 elseif($IsLinux)
 {
-    Set-Location -Path $buildPath/src/$env/
+    Set-Location -Path $buildPath/src//
     Invoke-Expression(".\VulkanProject")
 }
 elseif($IsMacOS)
 {
-    Set-Location -Path $buildPath/src/$env/
+    Set-Location -Path $buildPath/src/
     Invoke-Expression(".\VulkanProject")
 }
 
