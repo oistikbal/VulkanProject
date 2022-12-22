@@ -7,7 +7,7 @@ if($IsWindows)
 }
 elseif($IsLinux)
 {
-    Set-Location -Path $buildPath/src//
+    Set-Location -Path $buildPath/src/
     Invoke-Expression(".\VulkanProject")
 }
 elseif($IsMacOS)
