@@ -30,6 +30,7 @@ VulkanInstance::VulkanInstance(GLFWwindow* window)
     createGraphicsPipeline();
     createFramebuffers();
     createCommandPool();
+    createCommandBuffer();
     createSyncObjects();
 }
 
