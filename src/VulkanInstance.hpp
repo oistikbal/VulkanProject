@@ -57,6 +57,8 @@ public:
 	VkSemaphore m_imageAvailableSemaphore;
 	VkSemaphore m_renderFinishedSemaphore;
 	VkFence m_inFlightFence;
+	VkBuffer m_vertexBuffer;
+	VkDeviceMemory m_vertexBufferMemory;
 
 
 	void Initialize();
@@ -76,6 +78,7 @@ public:
 	void createImageViews();
 	void createGraphicsPipeline();
 	VkShaderModule createShaderModule(const std::vector<char>& code);
+	void createVertexBuffer();
 	void createRenderPass();
 	void createFramebuffers();
 	void createCommandPool();
@@ -83,5 +86,6 @@ public:
 	void recordCommandBuffer(VkCommandBuffer commandBuffer, uint32_t imageIndex);
 	void createSyncObjects();
 	void drawFrame();
+	uint32_t findMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties);
 };
 #endif // !_VULKAN_INSTANCE_HPP

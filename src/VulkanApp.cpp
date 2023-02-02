@@ -29,4 +29,6 @@ void VulkanApp::run()
 		glfwPollEvents();
 		m_graphics->drawFrame();
 	}
+
+	vkDeviceWaitIdle(m_graphics->m_vulkanInstance->m_device);
 }

@@ -11,9 +11,10 @@ public:
 	Graphics(GLFWwindow* window);
 	~Graphics();
 	void drawFrame();
+	VulkanInstance* m_vulkanInstance;
 
 private:
-	VulkanInstance* m_vulkanInstance;
+
 };
 #endif // !_GRAPHICS_CLASS_HPP
 
